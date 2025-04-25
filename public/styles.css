@@ -1,0 +1,411 @@
+/* Custom Variables */
+:root {
+  --golden-color: #D4AF37;
+  --golden-dark: #A68900;
+  --black-color: #000000;
+  --dark-color: #121212;
+  --gray-color: #333333;
+}
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--dark-color);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* Color Classes */
+.golden-text {
+  color: var(--golden-color) !important;
+  font-weight: 600 !important;
+  text-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+}
+
+.golden-bg {
+  background-color: var(--golden-color) !important;
+  color: var(--black-color) !important;
+}
+
+/* Better text readability */
+.text-muted {
+  color: #b3b3b3 !important;
+  font-weight: 500;
+  letter-spacing: 0.01rem;
+}
+
+.text-white {
+  text-shadow: 0px 0px 1px rgba(0,0,0,0.3);
+  font-weight: 500;
+}
+
+/* Buttons */
+.golden-btn {
+  background-color: var(--golden-color);
+  color: var(--black-color);
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.golden-btn:hover, .golden-btn:focus {
+  background-color: var(--golden-dark);
+  color: var(--black-color);
+}
+
+.btn-outline-golden {
+  border: 1px solid var(--golden-color);
+  color: var(--golden-color);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-golden:hover, .btn-outline-golden:focus {
+  background-color: var(--golden-color);
+  color: var(--black-color);
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.language-switcher {
+  border: 1px solid var(--golden-color);
+  border-radius: 30px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-switcher:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.user-icon {
+  width: 36px;
+  height: 36px;
+}
+
+/* Headers and Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: 0.03rem;
+  line-height: 1.3;
+}
+
+h1, .h1 {
+  font-size: 2.5rem;
+}
+
+h2, .h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+h3, .h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.display-4 {
+  font-weight: 800;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Hero Carousel */
+.carousel-item {
+  height: 500px;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.carousel-caption {
+  bottom: 20%;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.carousel-caption h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04rem;
+}
+
+.carousel-caption p {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* Advert Banner */
+.advert-banner {
+  background-color: var(--golden-color);
+  color: var(--black-color);
+}
+
+/* Car Cards */
+.car-card {
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.car-card img {
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.car-card:hover img {
+  transform: scale(1.05);
+}
+
+.car-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02rem;
+}
+
+.car-card .golden-text {
+  font-size: 1.2rem;
+  letter-spacing: 0.02rem;
+}
+
+.car-details {
+  font-size: 0.95rem !important;
+  font-weight: 500;
+}
+
+.car-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--golden-color);
+  color: var(--black-color);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Sold Cars */
+.sold-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.sold-badge {
+  transform: rotate(45deg);
+  padding: 5px 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* Testimonials */
+.testimonial-card {
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.golden-stars {
+  color: var(--golden-color);
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--gray-color);
+  padding-top: 30px;
+}
+
+.footer h3 {
+  position: relative;
+  padding-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--golden-color);
+  letter-spacing: 0.04rem;
+  text-shadow: 0px 0px 1px rgba(0,0,0,0.3);
+}
+
+.footer h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--golden-color);
+}
+
+.footer-links li {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #e0e0e0 !important;
+}
+
+.footer-links a:hover {
+  color: var(--golden-color) !important;
+  padding-right: 5px;
+}
+
+.footer-contact li {
+  margin-bottom: 15px;
+  font-size: 1.15rem;
+}
+
+.footer-contact span {
+  color: #e0e0e0 !important;
+  font-weight: 500;
+}
+
+.footer p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.footer .copyright {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 15px 0;
+  color: #c0c0c0 !important;
+}
+
+/* Browse Cars Categories */
+.category-card {
+  background-color: var(--dark-color);
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--black-color), var(--dark-color));
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.category-card:hover::before {
+  background: linear-gradient(45deg, var(--dark-color), var(--black-color));
+}
+
+.category-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover .category-icon {
+  transform: scale(1.1);
+}
+
+.category-card h4 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover h4 {
+  color: var(--golden-color);
+}
+
+.category-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.bg-gradient-to-b {
+  background: linear-gradient(to bottom, var(--black-color), var(--dark-color));
+}
+
+/* RTL Specific */
+html[dir="rtl"] .footer h3:after {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .footer-links a:hover {
+  padding-right: 0;
+  padding-left: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 350px;
+  }
+
+  .car-card img {
+    height: 150px;
+  }
+}

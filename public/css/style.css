@@ -1,0 +1,239 @@
+/* Main Styles for Car Management Dashboard */
+:root {
+    --gold: #d4af37;
+    --gold-light: #f0e68c;
+    --dark: #202020;
+    --darker: #1a1a1a;
+    --light-text: #f8f9fa;
+}
+.active-link {
+    color:  #ebd13ed2  !important; /* يخلي النص واضح */
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Custom Text Colors */
+.text-gold {
+    color: var(--gold) !important;
+}
+
+.text-gold-light {
+    color: var(--gold-light) !important;
+}
+
+/* Custom Background Colors */
+.bg-gold {
+    background-color: var(--gold) !important;
+}
+
+.bg-gold-light {
+    background-color: var(--gold-light) !important;
+}
+
+/* Sidebar Styles */
+#sidebar-wrapper {
+    min-height: 100vh;
+    transition: margin 0.25s ease-out;
+    width: 240px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#sidebar-wrapper .sidebar-heading {
+    color: var(--gold);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#sidebar-wrapper .list-group-item {
+    border: none;
+    border-radius: 0;
+    padding: 0.75rem 1.25rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#sidebar-wrapper .list-group-item:hover {
+    background-color: var(--darker);
+    color: var(--gold);
+}
+
+#sidebar-wrapper .list-group-item.active {
+    background-color: var(--gold);
+    color: var(--dark);
+    font-weight: bold;
+    border: none;
+}
+
+/* Page Content Styles */
+#page-content-wrapper {
+    min-width: 100vw;
+    background-color: #f8f9fa;
+}
+
+.page-content {
+    min-height: calc(100vh - 56px);
+}
+
+/* Card Styles */
+.card {
+    border-radius: 0.5rem;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+    font-weight: bold;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 1.5rem;
+    border-right: 1px solid var(--gold);
+    padding-right: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.timeline-item:last-child {
+    border-right: none;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    width: 0.75rem;
+    height: 0.75rem;
+    right: -0.375rem;
+    top: 0.25rem;
+    border-radius: 50%;
+    background-color: var(--gold);
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Table Styles */
+.table {
+    vertical-align: middle;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    color: var(--dark);
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background-color: var(--gold);
+    color: var(--dark);
+}
+
+/* Company and Car Thumbnails */
+.company-logo, .ad-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+}
+
+/* Form Styles */
+.form-section-title {
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold-light);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.logo-placeholder {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #ced4da;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.logo-placeholder:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* Comments */
+.comment-text {
+    display: block;
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-right: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    body.sb-toggled #sidebar-wrapper {
+        margin-right: -240px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #sidebar-wrapper {
+        margin-right: -240px;
+    }
+
+    body.sb-toggled #sidebar-wrapper {
+        margin-right: 0;
+    }
+}
