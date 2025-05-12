@@ -16,26 +16,33 @@ class CommentController extends Controller
         return view('dashbordadmin.coment', compact('comments', 'complaints'));
 
     }
-    public function destroy($id)
-    {
-        $comments = Rating::findOrFail($id);
+    public function update(Request $request, $id)
+{
+    // مؤقتاً فارغة، فقط لتجنب الخطأ
+}
 
-        // تأكد إنه فعلاً بائع
-              $comments->delete();
+public function toggleVisibility($id)
+{
+    $comment = Rating::findOrFail($id);
+    $comment->is_visible = !$comment->is_visible;
+    $comment->save();
 
-            return redirect()->back()->with('success', 'تم الحذف  بنجاح.');
+    return redirect()->back()->with('success', 'تم تحديث حالة التعليق.');
+}
 
 
-        }
+
         public function destroyg($id)
         {
-            $complaints = Complaint ::findOrFail($id);
-
-            // تأكد إنه فعلاً بائع
-                   $complaints ->delete();
-
-                return redirect()->back()->with('success', 'تم الحذف  بنجاح.');
-
 
             }
+            public function toggleVisibilitycc($id)
+{
+    $complaint = Complaint::findOrFail($id);
+    $complaint->is_visible = !$complaint->is_visible;
+    $complaint->save();
+
+    return redirect()->back()->with('success', 'تم تحديث حالة الشكوى.');
+}
+
 }

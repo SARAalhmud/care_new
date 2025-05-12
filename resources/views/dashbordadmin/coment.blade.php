@@ -67,13 +67,14 @@
                             <td>{{$comment->created_at}}</td>
                                  <td>
                                 <div class="actions">
-                                    <form action="{{ route('coment.destroy', $comment->id) }}" method="POST" style="display: inline-block;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="action-btn text-danger" data-bs-toggle="tooltip" title="حذف" onclick="return confirm('هل أنت متأكد من حذف هذه التقيم')">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </form>
+                                <form action="{{ route('coment.toggleVisibility', $comment->id) }}" method="POST" style="display: inline-block;">
+    @csrf
+    @method('PUT')
+    <button type="submit" class="action-btn {{ $comment->is_visible ? 'text-warning' : 'text-success' }}" title="{{ $comment->is_visible ? 'إخفاء التعليق' : 'إظهار التعليق' }}">
+        <i class="fas {{ $comment->is_visible ? 'fa-eye-slash' : 'fa-eye' }}"></i>
+    </button>
+</form>
+
 
                                 </div>
                             </td>
@@ -124,13 +125,13 @@
                         <td>{{ $complaint->type }}</td>
                         <td>
                             <div class="actions">
-                                <form action="{{ route('destroy', $complaint->id) }}" method="POST" style="display: inline-block;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="action-btn text-danger" data-bs-toggle="tooltip" title="حذف" onclick="return confirm('هل أنت متأكد من حذف هذه الشكوى؟')">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </form>
+                                <form action="{{ route('complaint.toggleVisibilitycc', $complaint->id) }}" method="POST" style="display: inline-block;">
+            @csrf
+            @method('PUT')
+            <button type="submit" class="action-btn {{ $complaint->is_visible ? 'text-warning' : 'text-success' }}" title="{{ $complaint->is_visible ? 'إخفاء الشكوى' : 'إظهار الشكوى' }}">
+                <i class="fas {{ $complaint->is_visible ? 'fa-eye-slash' : 'fa-eye' }}"></i>
+            </button>
+        </form>
 
                             </div>
                         </td>

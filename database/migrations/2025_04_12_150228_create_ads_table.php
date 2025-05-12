@@ -25,7 +25,7 @@ return new class extends Migration
             $table->boolean('approved')->default(false); // إضافة العمود approved
             $table->string('phone_number')->nullable(); // رقم الهاتف
 
-
+  $table->boolean('is_visible')->default(true);
             $table->timestamps(); // created_at & updated_at
         });
     }

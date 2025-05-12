@@ -19,6 +19,30 @@
     width: 100%;
     height: 100%;
 }
+.btn-golden {
+    background-color: #FFD700;
+    color: #000;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.btn-golden:hover {
+    background-color: #e6c200;
+    color: #000;
+}
+.golden-glow {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 0 transparent; /* البداية بدون ظل */
+}
+
+.golden-glow:hover {
+    box-shadow: 0 0 30px 10px rgba(255, 215, 0, 0.25); /* ظل ذهبي خلف الكرت */
+    transform: translateY(-5px); /* يعطي طفو خفيف */
+}
 
 
 </style>
@@ -69,8 +93,11 @@
         @foreach($newCars as $car)
 
         <!-- Latest Car 3 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="card car-card bg-black h-100">
+        <div class="col-lg-4 col-md-6 position-relative car-image-wrapper">
+<div class="card car-card bg-black h-100 golden-glow">
+
+
+
             <div class="position-relative">
                 @if(!empty($car->car_images) && is_array($car->car_images) && count($car->car_images) > 0)
                 <img src="{{ asset('storage/' . $car->car_images[0]) }}" alt="{{ $car->name }}" class="card-img-top">
@@ -89,10 +116,11 @@
                     <span class="me-2"><i class="bi bi-calendar"></i> {{ $car->year }}</span>
                     <span><i class="bi bi-speedometer2"></i> {{ $car->speed }} كم</span>
                 </div>
+<a href="{{ route('cars.carshow', $car->id) }}" class="btn-golden">
+    {{ __('messages.details') }}
+</a>
 
 
-                <a href="{{ route('cars.carshow', $car->id) }}" class="btn btn-outline-golden w-100">  {{ __('messages.details_button') }}</a>
-            </div>
 
           </div>
         </div>

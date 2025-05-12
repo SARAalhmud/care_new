@@ -85,6 +85,7 @@ return [
     'vision_p1' => 'We aspire to be the leaders in luxury car sales and maintenance across the Middle East.',
     'vision_p2' => 'We aim to advance the luxury car industry by offering cutting-edge technologies and modern services.',
 
+
     'mission_title' => 'Our Mission',
     'mission_p1' => 'To deliver a unique and comprehensive experience for our clients in the luxury car world.',
     'mission_p2' => 'We are committed to the highest standards of quality, transparency, and long-term customer relationships.',

@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ratings', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // ربط بـ users
-            $table->tinyInteger('rating'); // من 1 إلى 5
-            $table->text('comment')->nullable();
-            $table->timestamps();
-        });
+   Schema::create('ratings', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('user_id')->constrained()->onDelete('cascade'); // ربط بـ users
+    $table->tinyInteger('rating'); // من 1 إلى 5
+    $table->text('comment')->nullable();
+    $table->boolean('is_visible')->default(true); // 👈 جديد: للتحكم في الظهور
+    $table->timestamps();
+});
+
     }
 
     /**

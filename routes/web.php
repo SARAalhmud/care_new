@@ -60,6 +60,9 @@ Route::get('/carsall', [Controller::class, 'index'])->name('carsall');
         Route::delete('/coment/{id}', [CommentController::class, 'destroyg'])->name('destroy');
         Route::resource('/coment', CommentController::class);
         Route::resource('/usera', AdminUserController::class);
+        Route::put('/coment/{id}/toggle-visibility', [CommentController::class, 'toggleVisibility'])->name('coment.toggleVisibility');
+Route::put('/complaint/{id}/toggle-visibility', [CommentController::class, 'toggleVisibilitycc'])->name('complaint.toggleVisibilitycc');
+
     });
 
 

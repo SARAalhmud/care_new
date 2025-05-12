@@ -87,13 +87,6 @@
                                             <i class="fas fa-edit"></i>
                                         </a>
 
-                                        <form action="{{ route('adv.destroy', $ads->id) }}" method="POST" style="display:inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="action-btn delete-ad-btn" data-bs-toggle="tooltip" title="حذف">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </button>
-                                        </form>
 
                                         <form action="{{ route('adv.approve', $ads->id) }}" method="POST" style="display:inline-block;">
                                             @csrf

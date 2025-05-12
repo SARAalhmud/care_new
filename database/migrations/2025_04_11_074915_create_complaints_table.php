@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // معرف المستخدم الذي أرسل الشكوى
             $table->foreignId('car_id')->constrained()->onDelete('cascade'); // معرف السيارة المرتبطة بالشكوى
             $table->boolean('approvd')->default(false); // حالة الموافقة
+        $table->boolean('is_visible')->default(true);
             $table->timestamps(); // تواريخ الإنشاء والتحديث
         });
 

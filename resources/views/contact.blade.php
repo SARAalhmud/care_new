@@ -122,14 +122,7 @@
         </div>
 
         <!-- Map -->
-        <div class="col-lg-6">
-          <h3 class="text-white mb-4">موقعنا على <span class="golden-text">الخريطة</span></h3>
-          <div class="map-container rounded overflow-hidden">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106456.53429232756!2d36.19804415820314!3d33.51342339999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e6dc413cc6a7%3A0x6b9f66ebd1e394f2!2sDamascus%2C%20Syria!5e0!3m2!1sen!2sus!4v1712239100963!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </section>
 
   <!-- Working Hours -->
